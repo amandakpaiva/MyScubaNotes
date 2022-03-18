@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
 
-    @State var name : String = ""
+    
+    @State  var name : String = ""
     @State var phoneNumber : String = ""
     @State var zipCode : String = ""
     @State var PublicPlace: String = ""
@@ -20,32 +22,35 @@ struct ContentView: View {
     @State var city : String = ""
     @State var state : String = ""
 
+
     var body: some View {
         NavigationView{
             Form{
                 Section(header: Text("Cadastro de endereço")){
-                    
-                    TextField("Nome e Sobrenome", text: $name)
-                    TextField("Telefone", text: $phoneNumber)
-                    TextField("Cep", text: $zipCode)
-                    TextField("Logradouro", text: $PublicPlace)
+                 
+                    TextField("Nome", text: $name)
+                    TextField("Telefone", text: $phoneNumber) 
+                    TextField("CEP", text: $zipCode) 
+                    TextField("Logradouro", text: $PublicPlace) 
                     TextField("Número", text: $houseNumber)
                     TextField("Bairro", text: $district)
                     TextField("Complemento", text: $comp)
                     TextField("Cidade", text: $city)
                     TextField("Estado", text: $state)
+                    
+                    
+                    
                 }
                 Button(action: {
-                    print("Salvar dados")
+                    print(name, phoneNumber, zipCode, PublicPlace, houseNumber,district, comp, city, state)
                 }) {
-                    Text("Salvar")
+                    Text("                                Salvar")
                 }
                 Section(header: Text("Amanda Paiva ® Alguns direitos reservados")){
                   
                 }
             }
             .navigationBarTitle("MyScubaNotes")
-
         }
     }
 }
@@ -55,3 +60,8 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+
+
+
